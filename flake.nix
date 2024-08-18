@@ -15,6 +15,7 @@
         
       in pkgs.clangStdenv.mkDerivation {
 
+          pname = "ss4r-generator";
           version = "0.0.2";
 
           srcs = [
