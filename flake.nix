@@ -349,15 +349,16 @@
             mv ss3_tmp.cpp ss3.cpp
             sed -i '1s/^/#include <Rcpp.h>\n/' ss3.cpp
             Rscript -e 'Rcpp::Rcpp.package.skeleton("ss4r", path=".", cpp_files=Sys.glob(c("*.cpp","*.h")), example_code=FALSE, attributes=TRUE)'           
+            printf 'Package: ss4r\nTitle: Stock Synthesis 4 R\nVersion: 0.0.0.9000\nAuthors@R:\n person("Campbell", "Alexander", , "alex@alexpbell.com", role = c("aut", "cre"), comment = c(ORCID = "YOUR-ORCID-ID"))\nDescription: Stock Synthesis as a "pure" R package\nLicense: CC0 + file LICENSE\nEncoding: UTF-8\nRoxygen: list(markdown = TRUE)\nRoxygenNote: 7.3.1\nLinkingTo:\n    Rcpp\nImports:\n    Rcpp\n' > DESCRIPTION
+            cp DESCRIPTION ss4r
+            printf "#' Call Stock Synthesis\n#' @param x anything right now\n#' @export\ncall_stock_synthesis <- function(x) { call_ss3_notmain(x) }" > ss4r-package.R
+            cp ss4r-package.R ss4r/R
+            Rscript -e 'roxygen2::roxygenise("ssr4")'
           '';
 
           installPhase = ''
             mkdir -p $out/r-package
             cp -r ss4r $out/r-package
-            printf 'Package: ss4r\nTitle: Stock Synthesis 4 R\nVersion: 0.0.0.9000\nAuthors@R:\n person("Campbell", "Alexander", , "alex@alexpbell.com", role = c("aut", "cre"), comment = c(ORCID = "YOUR-ORCID-ID"))\nDescription: Stock Synthesis as a "pure" R package\nLicense: CC0 + file LICENSE\nEncoding: UTF-8\nRoxygen: list(markdown = TRUE)\nRoxygenNote: 7.3.1\nLinkingTo:\n    Rcpp\nImports:    Rcpp' > DESCRIPTION
-            cp DESCRIPTION $out/r-package/ss4r
-            printf "#' Call Stock Synthesis\n#' @param x anything right now\n#' @export\ncall_stock_synthesis <- function(x) { call_ss3_notmain(x) }" > ss4r-package.R
-            cp ss4r-package.R $out/r-package/ss4r/R
           '';
         };
 
