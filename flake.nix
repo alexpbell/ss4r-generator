@@ -343,7 +343,7 @@
             sed 's/int SzFreq_Nmeth;/int SzFreq_Nmeth=0;/g' ss312.cpp > ss313.cpp
             rm ss3.cpp ss31.cpp ss32.cpp ss33.cpp ss34.cpp ss35.cpp ss36.cpp ss37.cpp ss38.cpp ss39.cpp ss310.cpp ss311.cpp ss312.cpp
             mv ss313.cpp ss3.cpp
-            printf '// [[Rcpp::export]]\nint ss4r(const int x) {\n char * argv = "ss3";\n int argc = 1;\n int retnm = notmain(argc, &argv);\n return (retnm+1);\n}' >> ss3.cpp            
+            printf '// [[Rcpp::export]]\nint call_ss3_notmain(const int x) {\n char * argv = "ss3";\n int argc = 1;\n int retnm = notmain(argc, &argv);\n return (retnm+1);\n}' >> ss3.cpp            
             sed 's/int main(int/int notmain(int/g' ss3.cpp > ss3_tmp.cpp
             rm ss3.cpp
             mv ss3_tmp.cpp ss3.cpp
@@ -353,7 +353,7 @@
 
           installPhase = ''
             cp -r ss4r/ $out
-            printf "#' Call Stock Synthesis\n#' @param x anything right now\n#' @export\ncall_stock_synthesis <- function(x) { ss4r(x) }" > ss4r-package.R
+            printf "#' Call Stock Synthesis\n#' @param x anything right now\n#' @export\ncall_stock_synthesis <- function(x) { call_ss3_notmain(x) }" > ss4r-package.R
             cp ss4r-package.R $out/R       
           '';
         };
