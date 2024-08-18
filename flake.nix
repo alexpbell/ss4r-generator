@@ -348,7 +348,7 @@
             rm ss3.cpp
             mv ss3_tmp.cpp ss3.cpp
             sed -i '1s/^/#include <Rcpp.h>\n/' ss3.cpp
-            Rscript -e 'Rcpp::Rcpp.package.skeleton("ss4r", path=".", cpp_files=Sys.glob(c("*.cpp","*.h")), example_code=FALSE, attributes=TRUE, author="Alex Campbell",email="alex@alexpbell.com",license="MIT")'           
+            Rscript -e 'Rcpp::Rcpp.package.skeleton("ss4r", path=".", cpp_files=Sys.glob(c("*.cpp","*.h")), example_code=FALSE, attributes=TRUE)'           
           '';
 
           installPhase = ''
