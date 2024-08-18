@@ -1,0 +1,15 @@
+Package: ss4r
+Title: Stock Synthesis 4 R
+Version: 0.0.0.9000
+Authors@R: 
+    person("Campbell", "Alexander", , "alex@alexpbell.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Stock Synthesis as a "pure" R package
+License: CC0 + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+LinkingTo: 
+    Rcpp
+Imports: 
+    Rcpp
