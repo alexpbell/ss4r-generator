@@ -354,8 +354,8 @@
           installPhase = ''
             mkdir -p $out/r-package
             cp -r ss4r $out/r-package
-            cp ss4r/DESCRIPTION $out/r-package/ssr4
-            cp ss4r/R/ss4r-package.R $out/r-package/ss4r/R
+            cp ss4r-files/DESCRIPTION $out/r-package/ss4r
+            cp ss4r-files/R/ss4r-package.R $out/r-package/ss4r/R
           '';
         };
 
