@@ -354,8 +354,8 @@
           installPhase = ''
             mkdir -p $out/r-package
             cp -r ss4r $out/r-package
-            printf "#' Call Stock Synthesis\n#' @param x anything right now\n#' @export\ncall_stock_synthesis <- function(x) { call_ss3_notmain(x) }" > ss4r-package.R
-            cp ss4r-package.R $out/r-package/ss4r/R
+            cp ssr4/DESCRIPTION $out/r-package/ssr4
+            cp ss4r/R/ss4r-package.R $out/r-package/ss4r/R
           '';
         };
 
