@@ -1,5 +1,5 @@
 {
-  description = "ss3o";
+  description = "ss4r-generator";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
