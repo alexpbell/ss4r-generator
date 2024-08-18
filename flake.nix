@@ -353,7 +353,7 @@
             cp DESCRIPTION ss4r
             printf "#' Call Stock Synthesis\n#' @param x anything right now\n#' @export\ncall_stock_synthesis <- function(x) { call_ss3_notmain(x) }" > ss4r-package.R
             cp ss4r-package.R ss4r/R
-            Rscript -e 'roxygen2::roxygenise("ssr4")'
+            Rscript -e 'roxygen2::roxygenise("ss4r")'
           '';
 
           installPhase = ''
