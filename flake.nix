@@ -43,7 +43,7 @@
 
           sourceRoot = ".";
       
-          buildInputs = [ pkgs.flex pkgs.R pkgs.rPackages.Rcpp pkgs.rPackages.roxygen2 ];
+          buildInputs = [ pkgs.flex pkgs.R pkgs.rPackages.Rcpp pkgs.rPackages.devtools ];
 
           buildPhase = ''
             flex admb/src/nh99/tpl2cpp.lex
@@ -353,7 +353,7 @@
             cp DESCRIPTION ss4r
             printf "#' Call Stock Synthesis\n#' @param x anything right now\n#' @export\ncall_stock_synthesis <- function(x) { call_ss3_notmain(x) }" > ss4r-package.R
             cp ss4r-package.R ss4r/R
-            Rscript -e 'roxygen2::roxygenise("ss4r")'
+            Rscript -e 'devtools::document(pkg="ss4r")'
           '';
 
           installPhase = ''
