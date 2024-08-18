@@ -378,14 +378,3 @@
 #            cp source/models/Simple/control.ss $out/data
 #            cp source/models/Simple/data.ss $out/data
 #            cp source/models/Simple/forecast.ss $out/data
-
-
-#            cp *.cpp $out/ss4r/src
-#            cp *.h $out/ss4r/src
-#            printf 'Package: ss4r\nTitle: ss package\nVersion: 0.0.0.9000\nAuthors@R: person("Alexander", "Campbell", , "alex@alexpbell.com", role = c("aut", "cre"), comment = c(ORCID = "YOUR-ORCID-ID"))\nDescription: description.\nLicense: MIT\nEncoding: UTF-8\nRoxygen: list(markdown = TRUE)\nRoxygenNote: 7.3.1\nLinkingTo: \n    Rcpp\nImports: \n    Rcpp\n' > DESCRIPTION
-#            cp DESCRIPTION $out/ss4r
-#            printf 'importFrom(Rcpp,sourceCpp)\nuseDynLib(ss4r, .registration = TRUE)\nexport(callStockSynthesis)' > NAMESPACE
-#            cp NAMESPACE $out/ss4r
-#            mkdir -p $out/ss4r/R
-#            printf "#' Call Stock Synthesis\n#' @param x anything right now\n#' @export\ncallStockSynthesis <- function(x) {\n  ss4r(x)\n}" > ss4r-package.R
-#            cp ss4r-package.R $out/ss4r/R
