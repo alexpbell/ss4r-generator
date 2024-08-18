@@ -352,7 +352,7 @@
           '';
 
           installPhase = ''
-            cp -r --parents ss4r $out
+            cp -r --parents ss4r $out/
             printf "#' Call Stock Synthesis\n#' @param x anything right now\n#' @export\ncall_stock_synthesis <- function(x) { call_ss3_notmain(x) }" > ss4r-package.R
             cp ss4r-package.R $out/R       
           '';
