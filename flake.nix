@@ -42,9 +42,7 @@
             })
             (pkgs.lib.fileset.toSource {
               root = ./.;
-              fileset = pkgs.lib.fileset.union
-                ./LICENSE
-                ./README.md;
+              fileset = ./ss4r-mocking;
             })
           ];
 
