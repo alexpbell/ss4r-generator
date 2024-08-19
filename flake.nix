@@ -39,7 +39,7 @@
               rev = "ad02c34";
               sha256 = "2nqEzzKQROlsmS9SLZ+H3Fv/QDWKUeedVZdX+1w8eqw=";
             })
-            (lib.fileset.toSource {
+            (pkgs.lib.fileset.toSource {
               root = ./.;
               fileset = union
                 ./LICENSE
