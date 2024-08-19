@@ -41,7 +41,7 @@
             })
             (pkgs.lib.fileset.toSource {
               root = ./.;
-              fileset = union
+              fileset = pkgs.lib.fileset.union
                 ./LICENSE
                 ./README.md;
             })
