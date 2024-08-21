@@ -354,7 +354,7 @@
             mv ss3_tmp.cpp ss3.cpp
             sed -i '1s/^/#include <Rcpp.h>\n/' ss3.cpp
             Rscript -e 'Rcpp::Rcpp.package.skeleton("ss4r", path=".", cpp_files=Sys.glob(c("*.cpp","*.h")), example_code=FALSE, attributes=TRUE)'
-	    cp source/ss4r-mocking
+	    cp source/ss4r-mocking ss4r
 	    Rscript -e 'roxygen2::roxygenise("ss4r")'
 	    rm ss4r/Read-and-delete-me
  	    rm ss4r/src/*.o
