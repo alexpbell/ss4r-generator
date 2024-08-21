@@ -354,9 +354,7 @@
             mv ss3_tmp.cpp ss3.cpp
             sed -i '1s/^/#include <Rcpp.h>\n/' ss3.cpp
             Rscript -e 'Rcpp::Rcpp.package.skeleton("ss4r", path=".", cpp_files=Sys.glob(c("*.cpp","*.h")), example_code=FALSE, attributes=TRUE)'
-	    cp source/ss4r-mocking/DESCRIPTION ss4r
-            printf "#' Call Stock Synthesis\n#' @param x anything right now!\n#' @export\ncall_stock_synthesis <- function(x) { call_ss3_notmain(x) }" > ss4r-package.R
-            cp ss4r-package.R ss4r/R
+	    cp source/ss4r-mocking
 	    Rscript -e 'roxygen2::roxygenise("ss4r")'
 	    rm ss4r/Read-and-delete-me
  	    rm ss4r/src/*.o
